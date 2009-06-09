@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title></title><meta http-equiv="refresh" content="0;url= pbosetti.github.com/Welcome.html" /></head><body></body></html>
+---
+layout: default
+---
+ 
+<div id="home">
+  <h2>Posts</h2>
+  <ul id="posts">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.summary }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Tweets</h2>
+  <div id="tweets">
+    Loading...
+  </ul>
+  
+  <script type="text/javascript" src="/javascripts/twitter-1.11.2.js"></script>
+  
+  <script type="text/javascript">
+    getTwitters('tweets', { 
+      id: 'P4010', 
+      count: 5, 
+      enableLinks: true, 
+      clearContents: true,
+      template: '%text%'
+    });
+  </script>
+</div>
